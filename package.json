@@ -1,0 +1,34 @@
+{
+  "name": "test-pw-component",
+  "version": "6.0.0",
+  "description": "A component which ensures a secure password for account creation",
+  "main": "./dist/index.js",
+  "lsd:module": "https://linkedsoftwaredependencies.org/bundles/npm/strong-email-password-module",
+  "lsd:components": "dist/components/components.jsonld",
+  "types": "./dist/index.d.ts",
+  "lsd:contexts": {
+    "https://linkedsoftwaredependencies.org/bundles/npm/strong-email-password-module/^6.0.0/components/context.jsonld": "dist/components/context.jsonld"
+  },
+  "lsd:importPaths": {
+    "https://linkedsoftwaredependencies.org/bundles/npm/strong-email-password-module/^6.0.0/components/": "dist/components/",
+    "https://linkedsoftwaredependencies.org/bundles/npm/strong-email-password-module/^6.0.0/config/": "config/",
+    "https://linkedsoftwaredependencies.org/bundles/npm/strong-email-password-module/^6.0.0/dist/": "dist/"
+  },
+  "scripts": {
+    "build": "npm run build:ts && npm run build:components",
+    "build:ts": "tsc",
+    "prepare": "npm run build",
+    "build:components": "componentsjs-generator -s src -c dist/components -i .componentsignore -r strong-email-password"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/n3": "^1.10.4",
+    "componentsjs-generator": "^3.1.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@solid/community-server": "^6.0.0"
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "@context": "https://linkedsoftwaredependencies.org/bundles/npm/strong-email-password-module/^6.0.0/components/context.jsonld",
+    "@graph": [
+        {
+            "comment": "Instance of Strong Email Password Authorizer",
+            "@type": "StrongEmailPasswordAuthorizer",
+            "id": "urn:my-sepa:core:StrongEmailPasswordAuthorizer"
+        }
+    ]
+}
