@@ -1,1 +1,1 @@
-export * from './StrongEmailPasswordAuthorizer'
+export * from './StrongRegistrationManager'

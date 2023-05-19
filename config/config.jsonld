@@ -2,9 +2,9 @@
     "@context": "https://linkedsoftwaredependencies.org/bundles/npm/strong-email-password-module/^6.0.0/components/context.jsonld",
     "@graph": [
         {
-            "comment": "Instance of Strong Email Password Authorizer",
-            "@type": "StrongEmailPasswordAuthorizer",
-            "id": "urn:my-sepa:core:StrongEmailPasswordAuthorizer"
+            "comment": "RegistrationManager child class that enforces strong passwords (symbol, number, 12+ chars)",
+            "@type": "StrongRegistrationManager",
+            "id": "urn:my-sepa:core:StrongRegistrationManager"
         }
     ]
 }
