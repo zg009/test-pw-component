@@ -1,7 +1,7 @@
 {
   "name": "test-pw-component",
   "version": "6.0.0",
-  "description": "A component which ensures a secure password for account creation",
+  "description": "A component which ensures a strong password for account creation",
   "main": "./dist/index.js",
   "lsd:module": "https://linkedsoftwaredependencies.org/bundles/npm/strong-email-password-module",
   "lsd:components": "dist/components/components.jsonld",
