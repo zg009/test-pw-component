@@ -1,5 +1,6 @@
 import {  RegistrationManager, RegistrationManagerArgs, RegistrationParams, assertPassword, hasScheme } from "@solid/community-server";
 import assert from "assert";
+import { ensureStrongPassword } from "./utils/util";
 
 const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/u;
 
@@ -13,15 +14,6 @@ export class StrongRegistrationManager extends RegistrationManager {
         return typeof input === "string" ? input.trim() : undefined;
     }
 
-    private ensureStrongPassword(password: string): boolean {
-      let hasLength = password.length >= 12;
-      const symbols = "!@#$%^&*()+-_";
-      let hasOneSymbol = password.split("").filter(elem => symbols.includes(elem)).length > 0;
-      const digits = "1234567890";
-      let hasOneDigit = password.split("").filter(elem => digits.includes(elem)).length > 0;
-      return hasLength && hasOneDigit && hasOneSymbol;
-    }
-
     public validateInput(input: NodeJS.Dict<unknown>, allowRootPod: boolean): RegistrationParams {
         const {
             email, password, confirmPassword, webId, podName, register, createPod, createWebId, template, rootPod,
@@ -33,7 +25,7 @@ export class StrongRegistrationManager extends RegistrationManager {
           
           assertPassword(password, confirmPassword);
       
-          assert(this.ensureStrongPassword(password), 'Password is too weak: Must have 12+ characters, 1 digit, 1 symbol.');
+          assert(ensureStrongPassword(password), 'Password is too weak: Must have 12+ characters, 1 digit, 1 symbol.');
 
           const validated: RegistrationParams = {
             email: trimmedEmail,

@@ -18,7 +18,8 @@
     "build": "npm run build:ts && npm run build:components",
     "build:ts": "tsc",
     "prepare": "npm run build",
-    "build:components": "componentsjs-generator -s src -c dist/components -i .componentsignore -r strong-email-password"
+    "build:components": "componentsjs-generator -s src -c dist/components -i .componentsignore -r strong-email-password",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
